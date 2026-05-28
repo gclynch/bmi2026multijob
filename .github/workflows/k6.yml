@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
 
     - name: Pull Docker image for k6
       run: docker pull grafana/k6
@@ -19,7 +19,7 @@ jobs:
     - name: Run k6 load test, capture report
       run: docker run -i grafana/k6 run - <k6tests/perf2.js > k6report.txt
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
         name: k6report
         path: k6report.txt
