@@ -12,7 +12,7 @@ jobs:
         with:
           fetch-depth: 0  
       - name: SonarCloud Scan
-        uses:  SonarSource/sonarqube-scan-action@8.1.0
+        uses:  SonarSource/sonarqube-scan-action@v8.1.0
         with:
           projectBaseDir: .
           args: >
@@ -23,3 +23,4 @@ jobs:
  
 
 # secrets.SONAR_TOKEN secret in Github repo (generated when new project analysed on sonar cloud)
+
