@@ -12,14 +12,13 @@ jobs:
         with:
           fetch-depth: 0  
       - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
+        uses:  SonarSource/sonarqube-scan-action@6
         with:
           projectBaseDir: .
           args: >
             -Dsonar.organization=gclynch
             -Dsonar.projectKey=gclynch_bmi2021multijob
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
  
 
