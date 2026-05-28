@@ -12,7 +12,7 @@ jobs:
         with:
           fetch-depth: 0  
       - name: SonarCloud Scan
-        uses:  SonarSource/sonarqube-scan-action@<latest>
+        uses:  SonarSource/sonarqube-scan-action@<6.0.0>
         with:
           projectBaseDir: .
           args: >
