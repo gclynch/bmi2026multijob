@@ -33,19 +33,19 @@ export let options = {
   // Can be overwritten by setting the `responseType` option to `text` or `binary` for individual requests
   discardResponseBodies: true,
 
-  cloud: {
-    distribution: {
-      distributionLabel1: { loadZone: 'amazon:us:ashburn', percent: 50 },
-      distributionLabel2: { loadZone: 'amazon:ie:dublin', percent: 50 },
-    },
-  },
+  //cloud: {
+  //distribution: {
+  //    distributionLabel1: { loadZone: 'amazon:us:ashburn', percent: 50 },
+  //    distributionLabel2: { loadZone: 'amazon:ie:dublin', percent: 50 },
+  //  },
+  //},
 
 };
 
 // Export a default function - this defines the entry point for your VUs,
 // similar to the main() function in many other languages.
 export default function() {
-  let res = http.get("https://gc-bmicalculator-ga-staging.azurewebsites.net/");
+  let res = http.get("https://gc-bmicalculator-ga-staging.azurewebsites.net/bmi");
 
   check(res, {
       "is status 200": (r) => r.status === 200
@@ -57,11 +57,12 @@ export default function() {
 
 // to run on Docker:
 // docker pull docker pull grafana/k6
-// docker run -i docker pull grafana/k6 run - <perf1.js
+// docker run -i grafana/k6 run - <perf1.js
 
 
 // or install on machine and:
 // k6 run perf1.js
-// k6 login cloud - token ..........
-// k6 cloud perf1.js
+// for Grafana k6 cloud via grafana.com e.g. https://garyclynch.grafana.net/a/k6-app
+// k6 login cloud --token .......... --stack garyclynch
+// k6 cloud run perf1.js
 // k6 run --out cloud perf1.js 

@@ -34,12 +34,12 @@ export let options = {
   discardResponseBodies: false,
   // overriden below for GET
   
-  cloud: {
-    distribution: {
-      distributionLabel1: { loadZone: 'amazon:us:ashburn', percent: 50 },
-      distributionLabel2: { loadZone: 'amazon:ie:dublin', percent: 50 },
-    },
-  },
+ // cloud: {
+ //   distribution: {
+ //     distributionLabel1: { loadZone: 'amazon:us:ashburn', percent: 50 },
+ //     distributionLabel2: { loadZone: 'amazon:ie:dublin', percent: 50 },
+ //   },
+ // },
  
 };
 
